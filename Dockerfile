@@ -12,7 +12,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # Certificate error workaround
-RUN rm -rf /etc/rhsm-host
+#RUN rm -rf /etc/rhsm-host
 
 # Install dependencies
 RUN dnf -y update
