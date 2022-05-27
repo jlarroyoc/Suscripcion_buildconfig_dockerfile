@@ -2,7 +2,7 @@
 FROM registry.access.redhat.com/ubi8/python-38
 
 RUN echo 'WHOAMI' && whoami 
-USER root
+#USER root
 
 # Set work directory
 WORKDIR /opt/app-root/src
@@ -27,6 +27,9 @@ ENV TZ Europe/Madrid
 
 # Copy project
 COPY . .
+
+RUN chgrp -R 0 . && \
+chmod -R g=u .
 
 RUN echo 'WHOAMI' && whoami 
 
