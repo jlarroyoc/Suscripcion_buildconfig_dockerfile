@@ -1,6 +1,7 @@
 # Pull official base image
 FROM registry.access.redhat.com/ubi8/python-38
 
+RUN echo 'WHOAMI' && whoami 
 USER root
 
 # Set work directory
