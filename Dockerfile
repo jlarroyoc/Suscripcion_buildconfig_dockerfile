@@ -19,7 +19,7 @@ RUN dnf -y upgrade gzip
 RUN dnf -y install wget unzip libaio tzdata postgresql-devel gcc libtool python38-devel diffutils libxml2-devel cairo libnsl*
 RUN dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 RUN dnf -y update
-RUN dnf -y install bison byacc flex redis
+#RUN dnf -y install bison byacc flex redis
 
 RUN mkdir /opt/oracle
 ENV TZ Europe/Madrid
