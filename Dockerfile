@@ -30,7 +30,7 @@ COPY . .
 RUN echo 'WHOAMI' && whoami 
 
 # Install KampalGraph library
-RUN cd igraph-release-0.7 && ./bootstrap.sh && ./hola.sh
+RUN cd igraph-release-0.7 && ./bootstrap.sh
 
 RUN pwd
 

@@ -1,1 +1,2 @@
 echo BOOTSTRAP
+./hola.sh
