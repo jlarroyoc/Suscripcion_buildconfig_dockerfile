@@ -30,12 +30,9 @@ COPY . .
 RUN echo 'WHOAMI' && whoami 
 
 # Install KampalGraph library
-RUN cd igraph-release-0.7 && ./bootstrap.sh 
+RUN cd igraph-release-0.7 && ./bootstrap.sh && ./hola.sh
 
-# Install python packages
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
-RUN python manage.py collectstatic
+RUN pwd
 
 # Launch services (web and background workers)
 CMD ./launch_services.sh
