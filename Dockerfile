@@ -12,7 +12,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # Certificate error workaround
-#RUN rm -rf /etc/rhsm-host
+RUN rm -rf /etc/rhsm-host
 
 # Install dependencies
 RUN dnf -y update
@@ -38,5 +38,7 @@ RUN cd igraph-release-0.7 && ./bootstrap.sh
 
 RUN pwd
 
+USER 1001
+
 # Launch services (web and background workers)
-CMD ./launch_services.sh
+CMD sleep 3000
