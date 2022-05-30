@@ -2,7 +2,7 @@
 FROM registry.access.redhat.com/ubi8/python-38
 
 RUN echo 'WHOAMI' && whoami 
-#USER root
+USER root
 
 # Set work directory
 WORKDIR /opt/app-root/src
@@ -38,7 +38,7 @@ RUN cd igraph-release-0.7 && ./bootstrap.sh
 
 RUN pwd
 
-#USER 1001
+USER 1001
 
 # Launch services (web and background workers)
 CMD sleep 3000
