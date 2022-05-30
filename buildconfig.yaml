@@ -1,0 +1,59 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  annotations:
+    app.openshift.io/vcs-ref: ""
+    app.openshift.io/vcs-uri: https://github.com/jlarroyoc/ticket1617570.git
+    openshift.io/generated-by: OpenShiftWebConsole
+  creationTimestamp: "2022-05-27T11:21:06Z"
+  generation: 11
+  labels:
+    app: ticket-1617570-git
+    app.kubernetes.io/component: ticket-1617570-git
+    app.kubernetes.io/instance: ticket-1617570-git
+    app.kubernetes.io/name: ticket-1617570-git
+    app.kubernetes.io/part-of: ticket-1617570-git-app
+  name: ticket-1617570-git
+  namespace: jlarroyoc-dev
+  resourceVersion: "1138963360"
+  uid: 28f31860-0556-42e1-922f-2f4b4deb6a99
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: ticket-1617570-git:latest
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    contextDir: /
+    git:
+      uri: https://github.com/jlarroyoc/ticket1617570.git
+    type: Git
+  strategy:
+    dockerStrategy:
+      dockerfilePath: Dockerfile
+      volumes:
+      - name: etc-pki-entitlement
+        mounts:
+        - destinationPath: /etc/pki/entitlement
+        source:
+          type: Secret
+          secret:
+            secretName: etc-pki-entitlement
+    type: Docker
+  successfulBuildsHistoryLimit: 5
+  triggers:
+  - generic:
+      secretReference:
+        name: ticket-1617570-git-generic-webhook-secret
+    type: Generic
+  - github:
+      secretReference:
+        name: ticket-1617570-git-github-webhook-secret
+    type: GitHub
+  - type: ConfigChange
+status:
+  lastVersion: 10
