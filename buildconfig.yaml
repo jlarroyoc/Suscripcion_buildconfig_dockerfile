@@ -3,7 +3,7 @@ kind: BuildConfig
 metadata:
   annotations:
     app.openshift.io/vcs-ref: ""
-    app.openshift.io/vcs-uri: https://github.com/jlarroyoc/ticket1617570.git
+    app.openshift.io/vcs-uri: https://github.com/jlarroyoc/Suscripcion_buildconfig_dockerfile.git
     openshift.io/generated-by: OpenShiftWebConsole
   creationTimestamp: "2022-05-27T11:21:06Z"
   generation: 11
