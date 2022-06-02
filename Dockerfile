@@ -7,6 +7,8 @@ USER root
 # Set work directory
 WORKDIR /opt/app-root/src
 
+RUN cp /tmp/entitlement/* /etc/pki/entitlement
+
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
