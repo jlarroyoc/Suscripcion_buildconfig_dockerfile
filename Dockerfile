@@ -14,6 +14,8 @@ ENV PYTHONUNBUFFERED 1
 # Certificate error workaround
 RUN rm -rf /etc/rhsm-host
 
+RUN ls -l /etc/pki/entitlement
+
 # Install dependencies
 RUN dnf -y update
 RUN dnf -y upgrade gzip
