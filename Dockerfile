@@ -40,12 +40,9 @@ COPY . .
 
 RUN ls -l .
 
-# Install Oracle Client
-RUN cp -r oracle/instantclient_19_12 /opt/oracle
-
 # Install KampalGraph library
 # AST: dar permisos de ejecución a bootstrap.sh
-RUN cd igraph-release-0.7
+RUN cd igraph-release-0.7 && ls -l
 
 # Launch services (web and background workers)
 CMD sleep 3000
