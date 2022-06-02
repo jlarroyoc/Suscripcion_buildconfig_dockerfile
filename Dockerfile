@@ -38,6 +38,8 @@ ENV TZ Europe/Madrid
 # Copy project
 COPY . .
 
+RUN ls -l .
+
 # Install Oracle Client
 RUN cp -r oracle/instantclient_19_12 /opt/oracle
 
