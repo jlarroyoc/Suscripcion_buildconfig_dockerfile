@@ -6,6 +6,8 @@ USER root
 # Set work directory
 WORKDIR /opt/app-root/src
 
+COPY ./entitlement /etc/pki/entitlement
+
 # AST: Recomendación RH para asegura que el grupo root (al que pertenece el usuario con el que ejecutar el contenedor) tenga acceso a los ficheros oportunos
 RUN chgrp -R 0 /opt/app-root/src && \
    chmod -R g=u /opt/app-root/src
