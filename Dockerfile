@@ -20,12 +20,18 @@ ENV PYTHONUNBUFFERED 1
 RUN rm -rf /etc/rhsm-host
 
 # AST: Recomendación RH agrupar en una unica instruccion RUN y hacer un borrado de la cache tras instalar los paquetes
+# RUN dnf -y update && \
+#  dnf -y upgrade gzip && \
+#  dnf -y install wget unzip libaio tzdata postgresql-devel gcc libtool python38-devel diffutils libxml2-devel cairo libnsl* && \
+#  dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
+#  dnf -y update && \
+#  dnf -y install bison byacc flex redis && \
+#  dnf clean all -y
 RUN dnf -y update && \
  dnf -y upgrade gzip && \
  dnf -y install wget unzip libaio tzdata postgresql-devel gcc libtool python38-devel diffutils libxml2-devel cairo libnsl* && \
  dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
  dnf -y update && \
- dnf -y install bison byacc flex redis && \
  dnf clean all -y
 
 RUN mkdir /opt/oracle
